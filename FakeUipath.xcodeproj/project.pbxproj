@@ -16,6 +16,7 @@
 		785CBBD7278D863E0086A46A /* FakeUipathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CBBD6278D863E0086A46A /* FakeUipathTests.swift */; };
 		785CBBE1278D863F0086A46A /* FakeUipathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CBBE0278D863F0086A46A /* FakeUipathUITests.swift */; };
 		785CBBE3278D863F0086A46A /* FakeUipathUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CBBE2278D863F0086A46A /* FakeUipathUITestsLaunchTests.swift */; };
+		785CBBF0278D918C0086A46A /* uipathlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 785CBBEF278D918C0086A46A /* uipathlogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		785CBBDC278D863E0086A46A /* FakeUipathUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeUipathUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		785CBBE0278D863F0086A46A /* FakeUipathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUipathUITests.swift; sourceTree = "<group>"; };
 		785CBBE2278D863F0086A46A /* FakeUipathUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUipathUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		785CBBEF278D918C0086A46A /* uipathlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uipathlogo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				785CBBC1278D863C0086A46A /* SceneDelegate.swift */,
 				785CBBC3278D863C0086A46A /* ViewController.swift */,
 				785CBBC5278D863C0086A46A /* Main.storyboard */,
+				785CBBEF278D918C0086A46A /* uipathlogo.png */,
 				785CBBC8278D863E0086A46A /* Assets.xcassets */,
 				785CBBCA278D863E0086A46A /* LaunchScreen.storyboard */,
 				785CBBCD278D863E0086A46A /* Info.plist */,
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				785CBBCC278D863E0086A46A /* LaunchScreen.storyboard in Resources */,
+				785CBBF0278D918C0086A46A /* uipathlogo.png in Resources */,
 				785CBBC9278D863E0086A46A /* Assets.xcassets in Resources */,
 				785CBBC7278D863C0086A46A /* Main.storyboard in Resources */,
 			);

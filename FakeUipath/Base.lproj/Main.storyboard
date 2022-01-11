@@ -41,6 +41,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ne2-U9-DEE">
+                                <rect key="frame" x="160" y="672" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="로그인"/>
+                                <connections>
+                                    <action selector="LoginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bYu-zq-033"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -66,6 +75,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wa7-np-Xo2" secondAttribute="bottom" constant="451.5" id="xV7-dt-D8t"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="EmailLabel" destination="wa7-np-Xo2" id="tAh-lf-ODO"/>
+                        <outlet property="IdTextField" destination="1Fc-XH-OIc" id="cPk-fC-ZcS"/>
+                        <outlet property="PasswordLabel" destination="ltd-wj-FHC" id="gcX-4f-jCk"/>
+                        <outlet property="PasswordTextField" destination="KGx-2h-7M3" id="hFm-ar-GNi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

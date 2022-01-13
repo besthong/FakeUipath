@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7822EA1B278EE054007A8C46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7822EA1A278EE054007A8C46 /* User.swift */; };
+		7827A69A278FF67200A60BA9 /* TestFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7827A699278FF67200A60BA9 /* TestFiles.swift */; };
 		785CBBC0278D863C0086A46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CBBBF278D863C0086A46A /* AppDelegate.swift */; };
 		785CBBC2278D863C0086A46A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CBBC1278D863C0086A46A /* SceneDelegate.swift */; };
 		785CBBC4278D863C0086A46A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CBBC3278D863C0086A46A /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		7822EA1A278EE054007A8C46 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7827A699278FF67200A60BA9 /* TestFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFiles.swift; sourceTree = "<group>"; };
 		785CBBBC278D863C0086A46A /* FakeUipath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeUipath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		785CBBBF278D863C0086A46A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		785CBBC1278D863C0086A46A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				785CBBBF278D863C0086A46A /* AppDelegate.swift */,
 				785CBBC1278D863C0086A46A /* SceneDelegate.swift */,
 				785CBBC3278D863C0086A46A /* ViewController.swift */,
+				7827A699278FF67200A60BA9 /* TestFiles.swift */,
 				7822EA1A278EE054007A8C46 /* User.swift */,
 				785CBBC5278D863C0086A46A /* Main.storyboard */,
 				785CBBEF278D918C0086A46A /* uipathlogo.png */,
@@ -269,6 +272,7 @@
 				785CBBC4278D863C0086A46A /* ViewController.swift in Sources */,
 				785CBBC0278D863C0086A46A /* AppDelegate.swift in Sources */,
 				785CBBC2278D863C0086A46A /* SceneDelegate.swift in Sources */,
+				7827A69A278FF67200A60BA9 /* TestFiles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

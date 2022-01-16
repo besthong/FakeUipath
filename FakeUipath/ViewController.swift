@@ -40,6 +40,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
             }
         }
     }
+
     // 키보드 올라온 후 다른 곳 클릭 시 키보드 크기 계산해서 크기만큼 뷰 내리기 >👨🏻‍💻<
     @objc func adjustInputViewHide(noti: Notification){
         guard let userInfo = noti.userInfo else {return}
@@ -67,7 +68,6 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBAction func LoginBtn(_ sender: UIButton) {
         user.id = idTextField.text
         user.password = passwordTextField.text
-        
         print("User ID \(user.id) and Password is\(user.password)")
     }
 }

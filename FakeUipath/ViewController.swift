@@ -69,6 +69,48 @@ class ViewController: UIViewController,UITextFieldDelegate {
         user.id = idTextField.text
         user.password = passwordTextField.text
         print("User ID \(user.id) and Password is\(user.password)")
+        
+        let refresh_token: String = "ju677Y9oUQJ5uTbwbfEb5ZQSph26s1ixvIcDCxE_HuPy0"
+        let client_id: String = "8DEv1AMNXczW3y4U15LL3jYf62jK93n5"
+        let grant_type: String = "refresh_token"
+        
+        let param = ["grant_type" : grant_type, "client_id" : client_id, "refresh_token" : refresh_token]
+        let paramData = try! JSONSerialization.data(withJSONObject: param, options:[])
+        
+        let url = URL(string: "https://account.uipath.com/oauth/token")
+        
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        request.httpBody = paramData
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("KS_HJH", forHTTPHeaderField: "X-UIPATH-TenantName")
+        request.setValue(String(paramData.count), forHTTPHeaderField: "Content-Length")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let e = error{
+                print("An Error has occured: \(e.localizedDescription)")
+                return
+            }
+            
+            DispatchQueue.main.async(){
+                do{
+                    let object = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary
+                    guard let jsonObject = object else { return }
+                    
+                    let access_token = jsonObject["access_token"] as? String
+                    let id_token = jsonObject["id_token"] as? String
+                    let scope = jsonObject["scope"] as? String
+                    let expires_in = jsonObject["expires_in"] as? String
+                    let token_type = jsonObject["token_type"] as? String
+                    
+                    print(access_token ?? "nothing")
+                    
+                }catch let e as NSError{
+                    print("An error has occured while parsing JSONObject: \(e.localizedDescription)")
+                }
+            }
+        }.resume()
     }
 }
 

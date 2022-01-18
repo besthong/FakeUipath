@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uipathlogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="2yT-6H-SYS">
-                                <rect key="frame" x="0.0" y="144" width="201" height="89"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="89"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wa7-np-Xo2">
                                 <rect key="frame" x="50" y="390" width="64" height="20.5"/>
@@ -61,6 +61,7 @@
                             <constraint firstItem="2yT-6H-SYS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G5F-7N-GUy"/>
                             <constraint firstItem="1Fc-XH-OIc" firstAttribute="top" secondItem="wa7-np-Xo2" secondAttribute="bottom" constant="19.5" id="IBO-Lp-gF4"/>
                             <constraint firstItem="wa7-np-Xo2" firstAttribute="leading" secondItem="ltd-wj-FHC" secondAttribute="trailing" constant="-42" id="PxK-pv-ibC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2yT-6H-SYS" secondAttribute="trailing" id="TxC-fD-Tbk"/>
                             <constraint firstItem="KGx-2h-7M3" firstAttribute="leading" secondItem="wa7-np-Xo2" secondAttribute="trailing" constant="-64" id="Zcd-PI-RcY"/>
                             <constraint firstItem="KGx-2h-7M3" firstAttribute="top" secondItem="wa7-np-Xo2" secondAttribute="bottom" constant="137.5" id="bWo-dv-Gpu"/>
                             <constraint firstItem="ltd-wj-FHC" firstAttribute="leading" secondItem="wa7-np-Xo2" secondAttribute="leading" id="geG-09-YbY"/>

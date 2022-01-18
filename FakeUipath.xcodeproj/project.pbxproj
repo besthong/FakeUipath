@@ -19,6 +19,7 @@
 		785CBBE1278D863F0086A46A /* FakeUipathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CBBE0278D863F0086A46A /* FakeUipathUITests.swift */; };
 		785CBBE3278D863F0086A46A /* FakeUipathUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CBBE2278D863F0086A46A /* FakeUipathUITestsLaunchTests.swift */; };
 		785CBBF0278D918C0086A46A /* uipathlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 785CBBEF278D918C0086A46A /* uipathlogo.png */; };
+		787B264A2796D66F00DF3BD2 /* ShowJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B26492796D66F00DF3BD2 /* ShowJobsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		785CBBE0278D863F0086A46A /* FakeUipathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUipathUITests.swift; sourceTree = "<group>"; };
 		785CBBE2278D863F0086A46A /* FakeUipathUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUipathUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		785CBBEF278D918C0086A46A /* uipathlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uipathlogo.png; sourceTree = "<group>"; };
+		787B26492796D66F00DF3BD2 /* ShowJobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowJobsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				7827A699278FF67200A60BA9 /* TestFiles.swift */,
 				7822EA1A278EE054007A8C46 /* User.swift */,
 				785CBBC5278D863C0086A46A /* Main.storyboard */,
+				787B26492796D66F00DF3BD2 /* ShowJobsViewController.swift */,
 				785CBBEF278D918C0086A46A /* uipathlogo.png */,
 				785CBBC8278D863E0086A46A /* Assets.xcassets */,
 				785CBBCA278D863E0086A46A /* LaunchScreen.storyboard */,
@@ -272,6 +275,7 @@
 				785CBBC4278D863C0086A46A /* ViewController.swift in Sources */,
 				785CBBC0278D863C0086A46A /* AppDelegate.swift in Sources */,
 				785CBBC2278D863C0086A46A /* SceneDelegate.swift in Sources */,
+				787B264A2796D66F00DF3BD2 /* ShowJobsViewController.swift in Sources */,
 				7827A69A278FF67200A60BA9 /* TestFiles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

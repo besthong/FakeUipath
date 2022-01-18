@@ -104,13 +104,26 @@ class ViewController: UIViewController,UITextFieldDelegate {
                     let expires_in = jsonObject["expires_in"] as? String
                     let token_type = jsonObject["token_type"] as? String
                     
-                    print(access_token ?? "nothing")
-                    
+//                    print(access_token ?? "nothing")
+                    self.user.accessToken = access_token
+                    print(self.user.accessToken ?? 0)
                 }catch let e as NSError{
                     print("An error has occured while parsing JSONObject: \(e.localizedDescription)")
                 }
             }
+            
         }.resume()
+        
+        // 두번째 뷰에 데이터 전달하는 함수 >👨🏻‍💻<
+        performSegue(withIdentifier: "segueForToken", sender: nil)
+        
     }
+    
+    // 두번째 뷰에 데이터 전달하기전에 필요한 함수 작성 (뷰가 실제로 있나 확인작업) >👨🏻‍💻<
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let showJobsViewController = segue.destination as? ShowJobsViewController else { return }
+        showJobsViewController.tempLabel = user.accessToken ?? ""
+    }
+    
 }
 

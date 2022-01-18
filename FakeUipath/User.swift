@@ -11,6 +11,9 @@ import Foundation
 class User{
     var id: String?
     var password: String?
+    var accessToken: String?
+    var idFromGetFolders: Int?
+    
     
 //    init(id:String, password:String){
 //        self.id = id

@@ -110,20 +110,21 @@ class ViewController: UIViewController,UITextFieldDelegate {
                 }catch let e as NSError{
                     print("An error has occured while parsing JSONObject: \(e.localizedDescription)")
                 }
+                // 두번째 뷰에 데이터 전달하는 함수 >👨🏻‍💻<
+                self.performSegue(withIdentifier: "segueForToken", sender: nil)
             }
-            
+            print("2")
         }.resume()
-        
-        // 두번째 뷰에 데이터 전달하는 함수 >👨🏻‍💻<
-        performSegue(withIdentifier: "segueForToken", sender: nil)
+        print("1")
         
     }
-    
     // 두번째 뷰에 데이터 전달하기전에 필요한 함수 작성 (뷰가 실제로 있나 확인작업) >👨🏻‍💻<
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let showJobsViewController = segue.destination as? ShowJobsViewController else { return }
+        guard let showJobsViewController = segue.destination as? ShowJobsViewController else { print("nothing")
+            return
+        }
         showJobsViewController.tempLabel = user.accessToken ?? ""
+        print("3")
     }
-    
 }
 

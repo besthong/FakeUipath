@@ -16,7 +16,7 @@ class ShowJobsViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testLabel.text = user.accessToken
+        testLabel.text = tempLabel
     }
     
 }

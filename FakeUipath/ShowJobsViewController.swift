@@ -14,6 +14,8 @@ class ShowJobsViewController : UIViewController{
     
     var user: User = .init()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         testLabel.text = tempLabel

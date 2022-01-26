@@ -123,7 +123,6 @@ class ViewController: UIViewController,UITextFieldDelegate {
         guard let showJobsViewController = segue.destination as? ShowJobsViewController else { print("nothing")
             return
         }
-        showJobsViewController.tempLabel = user.accessToken ?? ""
         print("3")
     }
 }

@@ -8,17 +8,26 @@
 import Foundation
 import UIKit
 
-class ShowJobsViewController : UIViewController{
-    @IBOutlet var testLabel: UILabel!
-    var tempLabel: String = ""
+class ShowJobsViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    @IBOutlet var tableView: UITableView!
     
     var user: User = .init()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        testLabel.text = tempLabel
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else{
+            return UITableViewCell()
+        }
+        return cell
     }
     
 }

@@ -51,7 +51,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="로그인"/>
                                 <connections>
                                     <action selector="LoginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bYu-zq-033"/>
-                                    <segue destination="MUC-OJ-jmo" kind="show" identifier="segueForToken" id="ALf-fq-5e6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -81,6 +80,7 @@
                         <outlet property="IdTextField" destination="1Fc-XH-OIc" id="cPk-fC-ZcS"/>
                         <outlet property="PasswordLabel" destination="ltd-wj-FHC" id="gcX-4f-jCk"/>
                         <outlet property="PasswordTextField" destination="KGx-2h-7M3" id="hFm-ar-GNi"/>
+                        <segue destination="MUC-OJ-jmo" kind="showDetail" identifier="segueForToken" id="T4U-4D-IzM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -90,25 +90,42 @@
         <!--ShowJobs-->
         <scene sceneID="PDL-gP-10e">
             <objects>
-                <viewController title="ShowJobs" id="MUC-OJ-jmo" customClass="ShowJobsViewController" customModule="FakeUipath" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0ez-cd-WCE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                <viewController title="ShowJobs" modalPresentationStyle="fullScreen" id="MUC-OJ-jmo" customClass="ShowJobsViewController" customModule="FakeUipath" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFill" id="0ez-cd-WCE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sph-RH-73I">
-                                <rect key="frame" x="41" y="88" width="335" height="563"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YZ9-Rv-yYv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" id="0ug-Q8-k61" customClass="cell">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0ug-Q8-k61" id="Q4B-aa-Np9">
+                                            <rect key="frame" x="0.0" y="0.0" width="370" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MUC-OJ-jmo" id="1CJ-gT-qs9"/>
+                                    <outlet property="delegate" destination="MUC-OJ-jmo" id="7Ny-ua-xM8"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bgm-pW-Jub"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bgm-pW-Jub" firstAttribute="trailing" secondItem="YZ9-Rv-yYv" secondAttribute="trailing" id="DTs-cQ-yqb"/>
+                            <constraint firstItem="YZ9-Rv-yYv" firstAttribute="top" secondItem="bgm-pW-Jub" secondAttribute="top" id="N4A-GL-mQR"/>
+                            <constraint firstItem="YZ9-Rv-yYv" firstAttribute="leading" secondItem="bgm-pW-Jub" secondAttribute="leading" id="au0-qz-dnb"/>
+                            <constraint firstItem="bgm-pW-Jub" firstAttribute="bottom" secondItem="YZ9-Rv-yYv" secondAttribute="bottom" constant="20" id="kyl-zs-goz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sgp-gc-hqs"/>
                     <connections>
-                        <outlet property="testLabel" destination="Sph-RH-73I" id="9VQ-z7-OoB"/>
+                        <outlet property="tableView" destination="YZ9-Rv-yYv" id="6SU-78-Avt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ky9-RU-pae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

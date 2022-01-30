@@ -24,7 +24,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
     }
     
     //유저 클래스 생성 >👨🏻‍💻<
-    var user: User = .init()
+    var user = User.shared
+
     
     //뷰컨 클릭시 키보드가 내려가도록 설정 >👨🏻‍💻<
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -70,7 +71,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
         user.password = passwordTextField.text
         print("User ID \(user.id) and Password is\(user.password)")
         
-        let refresh_token: String = "ju677Y9oUQJ5uTbwbfEb5ZQSph26s1ixvIcDCxE_HuPy0"
+        let refresh_token: String = "dhtNDXJduhv8BB_gCO779K1JZhvPqkjwJmFsUp-IbD8vK"
         let client_id: String = "8DEv1AMNXczW3y4U15LL3jYf62jK93n5"
         let grant_type: String = "refresh_token"
         
@@ -113,17 +114,13 @@ class ViewController: UIViewController,UITextFieldDelegate {
                 // 두번째 뷰에 데이터 전달하는 함수 >👨🏻‍💻<
                 self.performSegue(withIdentifier: "segueForToken", sender: nil)
             }
-            print("2")
         }.resume()
-        print("1")
-        
     }
     // 두번째 뷰에 데이터 전달하기전에 필요한 함수 작성 (뷰가 실제로 있나 확인작업) >👨🏻‍💻<
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let showJobsViewController = segue.destination as? ShowJobsViewController else { print("nothing")
             return
         }
-        print("3")
     }
 }
 

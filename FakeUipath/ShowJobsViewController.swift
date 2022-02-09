@@ -33,9 +33,9 @@ class ShowJobsViewController : UIViewController, UITableViewDelegate, UITableVie
 
     struct Value: Codable {
         let key, displayName, fullyQualifiedName, fullyQualifiedNameOrderable: String
-        let valueDescription: String
+        let valueDescription: String?
         let provisionType, permissionModel: String
-        let parentID, parentKey: String
+        let parentID, parentKey: String?
         let isActive: Bool
         let feedType: String
         let id: Int
@@ -73,9 +73,12 @@ class ShowJobsViewController : UIViewController, UITableViewDelegate, UITableVie
         let url = URL(string: folderUrl)
         var request = URLRequest(url:url!)
         // GET 호출시 헤더 포함해서 값 전달 👇🏼
-        request.allHTTPHeaderFields=[
-            "Authorization":user.accessToken ?? "",
-        ]
+//        request.allHTTPHeaderFields=[
+//            "Authorization":user.accessToken ?? "",
+//        ]
+        request.httpMethod="GET"
+        request.setValue("Bearer \(user.accessToken ?? "")", forHTTPHeaderField: "Authorization")
+        
         URLSession.shared.dataTask(with: request){(data,response,error)in
             guard let data = data else{return}
             print("data \(data)")

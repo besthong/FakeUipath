@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ShowJobsViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ShowJobsViewController : UIViewController{
     
     @IBOutlet var tableView: UITableView!
     
@@ -56,17 +56,6 @@ class ShowJobsViewController : UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else{
-            return UITableViewCell()
-        }
-        return cell
-    }
-    
     func getFolder(){
         let folderUrl = "https://cloud.uipath.com/koreaquewzby/KS_HJH/orchestrator_/odata/folders?Filter=ClassicFolder"
 
@@ -87,5 +76,20 @@ class ShowJobsViewController : UIViewController, UITableViewDelegate, UITableVie
                 print(decodedData)
             }catch{print(String(describing: error))}
         }.resume()
+    }
+
+}
+
+
+extension ShowJobsViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else{
+            return UITableViewCell()
+        }
+        return cell
     }
 }

@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="150.72463768115944" y="130.58035714285714"/>
         </scene>
-        <!--ShowJobs-->
+        <!--Show Jobs View Controller-->
         <scene sceneID="PDL-gP-10e">
             <objects>
-                <viewController title="ShowJobs" modalPresentationStyle="fullScreen" id="MUC-OJ-jmo" customClass="ShowJobsViewController" customModule="FakeUipath" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="MUC-OJ-jmo" customClass="ShowJobsViewController" customModule="FakeUipath" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="0ez-cd-WCE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="798"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0ug-Q8-k61" customClass="cell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" id="0ug-Q8-k61" customClass="RobotCell" customModule="FakeUipath" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0ug-Q8-k61" id="Q4B-aa-Np9">
@@ -115,6 +115,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="RobotName" destination="JP5-1M-PRJ" id="vLv-pH-xzO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

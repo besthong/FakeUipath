@@ -13,7 +13,7 @@ class ShowJobsViewController : UIViewController{
     @IBOutlet var tableView: UITableView!
     
     var user = User.shared
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +22,9 @@ class ShowJobsViewController : UIViewController{
         getFolder()
         getEnv()
         getRobot()
+        print(user.robotNames)
+        tableView.reloadData()
+        
     }
 // ---getFplder API위한 structure 👇🏼
     struct folder: Codable {
@@ -136,6 +139,7 @@ class ShowJobsViewController : UIViewController{
             
         }
     }
+    
     func getRobot(){
         let robotUrl = "https://cloud.uipath.com/koreaquewzby/KS_HJH/odata/Robots"
         let url = URL(string: robotUrl)
@@ -145,29 +149,28 @@ class ShowJobsViewController : UIViewController{
         request.setValue(user.idFromGetFolders as? String, forHTTPHeaderField: "X-UIPATH-OrganizationUnitId")
         request.setValue("Bearer \(user.accessToken ?? "")", forHTTPHeaderField: "Authorization")
         
-        URLSession.shared.dataTask(with: request){(data,response,error)in
+        URLSession.shared.dataTask(with: request){[self](data,response,error)in
             guard let data = data else{return}
             print("data \(data)")
             do{
+                
                 let decodedData = try JSONDecoder().decode(robot.self, from:data)
                 print(decodedData)
                 
-                for i in decodedData.value!{
-                    print(i)
+                for i in decodedData.value ?? []{
+//                    print(i.name)
+                    self.user.robotNames.append(i.name)
                 }
+                
             }catch{(print(String(describing: error)))}
-            
         }.resume()
     }
     // ---getRobot API 위한 structure 및 API Call👆🏻
 }
 
-
-
-
 extension ShowJobsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return user.robotNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

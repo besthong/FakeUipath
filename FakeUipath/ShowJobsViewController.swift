@@ -21,11 +21,12 @@ class ShowJobsViewController : UIViewController{
         tableView.dataSource=self
         getFolder()
         getEnv()
+        print("Env id is -> \(user.idEnv)")
         getRobot()
         print(user.robotNames)
-        tableView.reloadData()
-        
+        //        tableView.reloadData()
     }
+    
 // ---getFplder API위한 structure 👇🏼
     struct folder: Codable {
         let value: [Value]?
@@ -51,14 +52,14 @@ class ShowJobsViewController : UIViewController{
         
         URLSession.shared.dataTask(with: request){(data,response,error)in
             guard let data = data else{return}
-            print("data \(data)")
+//            print("data \(data)")
             do{
                 let decodedData = try JSONDecoder().decode(folder.self, from: data)
                 print(decodedData.value!)
                 for i in decodedData.value!{
-                    self.user.idFromGetFolders=i.id ?? 0
+                    self.user.idFromGetFolders=i.id
                 }
-                print("INPUT > : \(self.user.idFromGetFolders ?? 0)")
+//                print("INPUT > : \(self.user.idFromGetFolders ?? 0)")
             }catch{print(String(describing: error))}
         }.resume()
     }
@@ -66,7 +67,7 @@ class ShowJobsViewController : UIViewController{
     
     // ---getEnv API 위한 structure 및 API Call👇🏼
     struct env:Codable{
-        let value:[valueOfEnv]?
+        let value:[valueOfEnv]
     }
     struct valueOfEnv:Codable{
         let name: String
@@ -89,13 +90,14 @@ class ShowJobsViewController : UIViewController{
         
         URLSession.shared.dataTask(with: request){(data,response,error)in
             guard let data = data else{return}
-            print("data \(data)")
+            
+//            print("data \(data)")
             do{
                 let decodedData = try JSONDecoder().decode(env.self, from: data)
-                for i in decodedData.value!{
+                for i in decodedData.value{
                     self.user.idEnv = i.id
                 }
-                print("ENV ID > \(self.user.idEnv ?? 0)")
+//                completion(decodedData)
             }catch{print(String(describing:error))}
         }.resume()
     }
@@ -104,38 +106,39 @@ class ShowJobsViewController : UIViewController{
     
     // ---getRobot API 위한 structure 및 API Call👇🏼
     struct robot:Codable{
-        let value: [valueOfRobot]?
+        let value: [valueOfRobot]
         
     }
     struct valueOfRobot:Codable{
-        let machineName: String
-        let machineID: Int
-        let name, username: String
-        let type, hostingType, provisionType: String
-        let userID: Int
-        let enabled: Bool
-        let robotEnvironments: String?
-        let lastModificationTime: String?
-        let lastModifierUserID: Int?
-        let creationTime: String
-        let creatorUserID, id: Int
+        let name: String
+//        let machineName: String
+//        let machineID: Int
+//        let name, username: String
+//        let type, hostingType, provisionType: String
+//        let userID: Int
+//        let enabled: Bool
+//        let robotEnvironments: String?
+//        let lastModificationTime: String?
+//        let lastModifierUserID: Int?
+//        let creationTime: String
+//        let creatorUserID, id: Int
         
         enum CodingKeys: String, CodingKey {
-            case machineName = "MachineName"
-            case machineID = "MachineId"
+//            case machineName = "MachineName"
+//            case machineID = "MachineId"
             case name = "Name"
-            case username = "Username"
-            case type = "Type"
-            case hostingType = "HostingType"
-            case provisionType = "ProvisionType"
-            case userID = "UserId"
-            case enabled = "Enabled"
-            case robotEnvironments = "RobotEnvironments"
-            case lastModificationTime = "LastModificationTime"
-            case lastModifierUserID = "LastModifierUserId"
-            case creationTime = "CreationTime"
-            case creatorUserID = "CreatorUserId"
-            case id = "Id"
+//            case username = "Username"
+//            case type = "Type"
+//            case hostingType = "HostingType"
+//            case provisionType = "ProvisionType"
+//            case userID = "UserId"
+//            case enabled = "Enabled"
+//            case robotEnvironments = "RobotEnvironments"
+//            case lastModificationTime = "LastModificationTime"
+//            case lastModifierUserID = "LastModifierUserId"
+//            case creationTime = "CreationTime"
+//            case creatorUserID = "CreatorUserId"
+//            case id = "Id"
             
         }
     }
@@ -151,26 +154,27 @@ class ShowJobsViewController : UIViewController{
         
         URLSession.shared.dataTask(with: request){[self](data,response,error)in
             guard let data = data else{return}
-            print("data \(data)")
+//            print("data \(data)")
             do{
-                
                 let decodedData = try JSONDecoder().decode(robot.self, from:data)
                 print(decodedData)
-                
-                for i in decodedData.value ?? []{
-//                    print(i.name)
-                    self.user.robotNames.append(i.name)
+                DispatchQueue.main.async{
+                    for i in decodedData.value{
+    //                    print(i.name)
+//                        self.user.robotNames!.append(i.name)
+                        (self.user.robotNames?.append(i.name)) ?? (self.user.robotNames = [i.name])
+                    }
                 }
-                
             }catch{(print(String(describing: error)))}
         }.resume()
     }
     // ---getRobot API 위한 structure 및 API Call👆🏻
 }
 
+
 extension ShowJobsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return user.robotNames.count
+        return user.robotNames?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

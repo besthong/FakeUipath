@@ -20,7 +20,7 @@ class ShowJobsViewController : UIViewController{
         tableView.delegate = self
         tableView.dataSource=self
         getFolder()
-        getEnv()
+        getEnv() //👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻
         print("Env id is -> \(user.idEnv)")
         getRobot()
         print(user.robotNames)
@@ -79,7 +79,7 @@ class ShowJobsViewController : UIViewController{
         }
     }
 
-    func getEnv(){
+    func getEnv(){ //👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻
         let envUrl = "https://cloud.uipath.com/koreaquewzby/KS_HJH/odata/Environments?Filter=Demo"
         let url = URL(string: envUrl)
         var request = URLRequest(url:url!)
@@ -95,7 +95,7 @@ class ShowJobsViewController : UIViewController{
             do{
                 let decodedData = try JSONDecoder().decode(env.self, from: data)
                 for i in decodedData.value{
-                    self.user.idEnv = i.id
+                    self.user.idEnv = i.id //👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻👈🏻
                 }
 //                completion(decodedData)
             }catch{print(String(describing:error))}

@@ -71,8 +71,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
         user.password = passwordTextField.text
         print("User ID \(user.id) and Password is\(user.password)")
         
-        let refresh_token: String = "6yisQ3_T1qN7s0t_Ip_DGJXrdahh4OikF3hJyV2CR4Ou0"
-        let client_id: String = "8DEv1AMNXczW3y4U15LL3jYf62jK93n5"
+        let refresh_token: String = "############"
+        let client_id: String = "#########"
         let grant_type: String = "refresh_token"
         
         let param = ["grant_type" : grant_type, "client_id" : client_id, "refresh_token" : refresh_token]

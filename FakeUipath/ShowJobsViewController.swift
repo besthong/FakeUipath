@@ -42,7 +42,7 @@ class ShowJobsViewController : UIViewController{
         }
     }
     func getFolder(){
-        let folderUrl = "https://cloud.uipath.com/koreaquewzby/KS_HJH/orchestrator_/odata/folders?Filter=ClassicFolder"
+        let folderUrl = "https://cloud.uipath.com/koreaquewzby/##########"
 
         let url = URL(string: folderUrl)
         var request = URLRequest(url:url!)
@@ -80,7 +80,7 @@ class ShowJobsViewController : UIViewController{
     }
 
     func getEnv(){
-        let envUrl = "https://cloud.uipath.com/koreaquewzby/KS_HJH/odata/Environments?Filter=Demo"
+        let envUrl = "https://cloud.uipath.com/koreaquewzby/##########"
         let url = URL(string: envUrl)
         var request = URLRequest(url:url!)
         
@@ -144,7 +144,7 @@ class ShowJobsViewController : UIViewController{
     }
     
     func getRobot(){
-        let robotUrl = "https://cloud.uipath.com/koreaquewzby/KS_HJH/odata/Robots"
+        let robotUrl = "https://cloud.uipath.com/########"
         let url = URL(string: robotUrl)
         var request = URLRequest(url:url!)
         
